@@ -9,6 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
 const Component05 = () => {
   const [todolist, setTodolist] = useState([]);
@@ -61,11 +62,20 @@ const Component05 = () => {
   // Looping over array of items, use map() method.
 
   return (
-    <Box sx={{ marginTop: 7 }}>
+    <Container
+      maxWidth='sm'
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        marginTop: 10,
+        backgroundColor: 'lightgray',
+      }}
+    >
       <List>
         {todolist.map((row) => {
           return (
-            <Card sx={{ maxWidth: 500 }} key={row.description}>
+            <Card sx={{ margin: 3 }} key={row.description}>
               <CardContent>
                 <Chip label='primary' color='primary' />
                 <ListItemText primary={row.description} secondary={row.due} />
@@ -74,7 +84,7 @@ const Component05 = () => {
           );
         })}
       </List>
-    </Box>
+    </Container>
   );
 };
 

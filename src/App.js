@@ -7,11 +7,14 @@ import Array03 from './Array03';
 import List04 from './List04';
 import Component01 from './Component01';
 import Appbar from './Appbar';
+import { Container } from '@mui/material';
 
 const App = () => {
   return (
     <React.Fragment>
-      <Appbar />
+      <Container>
+        <Appbar />
+      </Container>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/test' element={<Component01 />} />
