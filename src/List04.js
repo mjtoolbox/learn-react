@@ -7,6 +7,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 const List04 = () => {
   const [todolist, setTodolist] = useState([]);
@@ -30,15 +31,17 @@ const List04 = () => {
   // Looping over array of items, use map() method.
 
   return (
-    <List>
-      {todolist.map((row) => {
-        return (
-          <ListItem key={row.description}>
-            <ListItemText primary={row.description} secondary={row.due} />
-          </ListItem>
-        );
-      })}
-    </List>
+    <Box sx={{ marginTop: 7 }}>
+      <List>
+        {todolist.map((row) => {
+          return (
+            <ListItem key={row.description}>
+              <ListItemText primary={row.description} secondary={row.due} />
+            </ListItem>
+          );
+        })}
+      </List>
+    </Box>
     // <List>
     //   {todolist.map((row) => {
     //     return (
