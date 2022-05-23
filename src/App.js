@@ -1,30 +1,27 @@
-import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import Component01 from './Component01';
-import Query02 from './Query02';
-import Home from './Home';
+import React, { useState } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Navigation />
-
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/test' element={<Component01 />} />
-        <Route path='/query' element={<Query02 />} />
-      </Routes>
-    </>
-  );
-}
-
-const Navigation = () => {
-  return (
-    <nav>
-      <Link to='/'>Home</Link>
-      <Link to='/test'>Test</Link>
-      <Link to='/query'>Query</Link>
-    </nav>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar>
+        <Toolbar>
+          <IconButton size='large' edge='start' color='inherit'>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+            ToDoApp
+          </Typography>
+          <Button color='inherit'>Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 

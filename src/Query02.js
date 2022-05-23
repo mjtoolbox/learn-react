@@ -9,7 +9,7 @@ const Query02 = () => {
     try {
       var url = 'http://localhost:8000/todos';
       const response = await axios.get(url);
-      console.log(response);
+      console.log(response.data);
     } catch (err) {
       console.log(err);
     }
