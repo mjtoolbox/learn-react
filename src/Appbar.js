@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import { Container } from '@mui/system';
 
 const Appbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -23,8 +24,8 @@ const Appbar = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar>
+    <Container sx={{ flexGrow: 1 }}>
+      <AppBar position='fixed'>
         <Toolbar>
           <IconButton
             size='medium'
@@ -48,17 +49,23 @@ const Appbar = () => {
             <MenuItem component={Link} to='/list' onClick={handleClose}>
               List
             </MenuItem>
-            <MenuItem component={Link} to='/array' onClick={handleClose}>
-              Array
+            <MenuItem component={Link} to='/viewtodo' onClick={handleClose}>
+              View Todo
             </MenuItem>
           </Menu>
-          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+          <Typography
+            variant='h6'
+            component='div'
+            align='center'
+            sx={{ flexGrow: 1 }}
+          >
             ToDoApp
           </Typography>
           <Button color='inherit'>Login</Button>
         </Toolbar>
       </AppBar>
-    </Box>
+      <Toolbar />
+    </Container>
   );
 };
 

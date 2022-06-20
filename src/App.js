@@ -8,6 +8,9 @@ import List04 from './List04';
 import Component01 from './Component01';
 import Appbar from './Appbar';
 import { Container } from '@mui/material';
+import Listt from './Listt';
+import ViewTodo from './ViewTodo';
+import NewTask from './NewTask';
 
 const App = () => {
   return (
@@ -19,9 +22,10 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/test' element={<Component01 />} />
         <Route path='/query' element={<Query02 />} />
-        <Route path='/array' element={<Array03 />} />
-        <Route path='/list' element={<List04 />} />
+        <Route path='/viewtodo' element={<ViewTodo />} />
+        <Route path='/list' element={<Listt />} />
         <Route path='/card' element={<Component05 />} />
+        <Route path='/newtask' element={<NewTask />} />
       </Routes>
     </React.Fragment>
   );
